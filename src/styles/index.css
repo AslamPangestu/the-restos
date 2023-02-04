@@ -1,0 +1,16 @@
+@import url("./variabels.css");
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
