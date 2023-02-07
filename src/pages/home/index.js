@@ -4,12 +4,9 @@ import Loading from 'src/core/loading-construct'
 
 const Home = {
   async render () {
-    // return `
-    //   <content-jumbotron></content-jumbotron>
-    //   <restaurants-container id="id" image="pictureId" title="name" description="description"></restaurants-container>
-    // `
     return `
       <content-jumbotron></content-jumbotron>
+      <restaurants-container id="id" image="pictureId" title="name" description="description"></restaurants-container>
     `
   },
 

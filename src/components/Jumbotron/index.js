@@ -13,12 +13,13 @@ class Jumbotron extends HTMLElement {
         <style>
             .container {
                 max-height: 300px;
+                max-width: 1200px;
                 position:relative;
                 overflow: hidden;
             }
 
             .container>img {
-                max-width: 1200px;
+                width: 100%;
                 object-fit: cover;
                 filter: brightness(50%)
             }
