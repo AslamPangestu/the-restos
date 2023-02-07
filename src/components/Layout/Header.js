@@ -55,10 +55,10 @@ class HeaderLayout extends HTMLElement {
         header .app-bar__navigation {
           position: absolute;
           top: 50px;
-          left: -180px;
+          left: -190px;
           width: 150px;
           transition: all 0.3s;
-          padding: 8px;
+          padding: 8px 16px;
           background-color: white;
           overflow: hidden;
         }
@@ -71,7 +71,7 @@ class HeaderLayout extends HTMLElement {
           color: var(--text);
           display: inline-block;
           text-decoration: none;
-          padding: 14px 8px;
+          padding: 14px 0;
           margin-bottom: 5px;
           width: 100%;
         }

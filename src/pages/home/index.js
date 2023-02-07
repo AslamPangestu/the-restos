@@ -1,9 +1,8 @@
 const Home = {
   async render () {
     return `
-        <div>
-          Home
-        </div>
+        <content-jumbotron></content-jumbotron>
+        Home
       `
   },
 

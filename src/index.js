@@ -3,6 +3,7 @@ import 'regenerator-runtime'
 import 'src/components/Layout/header'
 import 'src/components/Layout/footer'
 import 'src/components/Layout/loading'
+import 'src/components/Jumbotron'
 
 import App from 'src/app'
 // import swRegister from 'src/core/sw-register'
