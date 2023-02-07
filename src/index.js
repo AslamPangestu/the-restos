@@ -5,10 +5,9 @@ import 'src/components/Layout/footer'
 import 'src/components/Layout/loading'
 
 import App from 'src/app'
-import swRegister from 'src/core/sw-register'
+// import swRegister from 'src/core/sw-register'
 
 import 'src/styles/index.css'
-// import 'src/styles/responsive.css'
 
 const app = new App({
   drawerButton: document.querySelector('#drawer-button'),
@@ -22,5 +21,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', async () => {
   app.renderPage()
-  swRegister()
+  // swRegister()
 })
