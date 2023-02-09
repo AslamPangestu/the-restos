@@ -1,9 +1,4 @@
 class HeaderLayout extends HTMLElement {
-  // constructor () {
-  //   super()
-  //   this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  // }
-
   connectedCallback () {
     this.render()
   }
@@ -94,6 +89,7 @@ class HeaderLayout extends HTMLElement {
             position: static;
             width: 100%;
             background-color: transparent;
+            margin: 0 32px;
           }
         
           header .app-bar__navigation ul li {
@@ -134,7 +130,7 @@ class HeaderLayout extends HTMLElement {
         }
       </style>
 
-      <a href="#root" class="skip-link">Menuju ke konten</a>
+      <button id="skiplink" tabindex="0" class="skip-link">Menuju ke konten</button>
       <header>
         <div class="app-bar__menu">
             <button id="drawer-button">☰</button>
@@ -145,7 +141,7 @@ class HeaderLayout extends HTMLElement {
         <nav id="drawer" class="app-bar__navigation">
             <ul>
                 <li><a href="#/">Home</a></li>
-                <li><a href="#/favorite">Favorite</a></li>
+                <li><a href="#/favourites">Favorite</a></li>
                 <li><a href="https://www.linkedin.com/in/aslampangestu03">About Us</a></li>
             </ul>
         </nav>

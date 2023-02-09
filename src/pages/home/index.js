@@ -6,15 +6,15 @@ const Home = {
   async render () {
     return `
       <content-jumbotron></content-jumbotron>
-      <restaurants-container id="id" image="pictureId" title="name" description="description"></restaurants-container>
+      <restaurants-container page-title="Our Restos" id="id" image="pictureId" title="name" description="description"></restaurants-container>
     `
   },
 
   async afterRender () {
-    const restaurantsElement = document.querySelector('restaurants-container')
     Loading.toggle()
-    const { default: API } = await import('src/services/restaurant-api')
-    const { error, response } = await API.all()
+    const restaurantsElement = document.querySelector('restaurants-container')
+    const { default: SERVICE } = await import('src/services/restaurant-api')
+    const { error, response } = await SERVICE.all()
     Loading.close()
     if (error) {
       restaurantsElement.renderError('Ada Masalah')
@@ -26,7 +26,6 @@ const Home = {
       return
     }
     restaurantsElement.data = response
-    this.render()
   }
 }
 

@@ -7,6 +7,7 @@ class RestaurantsContainer extends HTMLElement {
   }
 
   connectedCallback () {
+    this.pageTitle = this.getAttribute('page-title') || ''
     this.id = this.getAttribute('id') || null
     this.image = this.getAttribute('image') || null
     this.title = this.getAttribute('title') || ''
@@ -30,6 +31,9 @@ class RestaurantsContainer extends HTMLElement {
   render () {
     this.shadowDOM.innerHTML = `
       <style>
+        .page-title{
+          text-align: center;
+        }
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -49,6 +53,7 @@ class RestaurantsContainer extends HTMLElement {
             }
         }
       </style>
+      <h1 class="page-title">${this.pageTitle}</h1>
       <div class="container"></div>
     `
 

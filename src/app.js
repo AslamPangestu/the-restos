@@ -16,6 +16,11 @@ class App {
       drawer: this._drawer,
       root: this._root
     })
+    const skiplinkElement = document.querySelector('#skiplink')
+    skiplinkElement.addEventListener('click', () => {
+      this._root.scrollIntoView()
+      skiplinkElement.blur()
+    })
   }
 
   async renderPage () {

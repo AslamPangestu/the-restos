@@ -14,7 +14,7 @@ class FooterLayout extends HTMLElement {
         footer {
           text-align: center;
           padding: 10px 0;
-          margin: 0 10px;
+          margin: 16px 10px;
         }
 
         footer a {
