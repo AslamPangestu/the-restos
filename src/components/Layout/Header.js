@@ -28,7 +28,7 @@ class HeaderLayout extends HTMLElement {
           background-color: transparent;
           border: none;
           font-size: 18px;
-          padding: 8px;
+          padding: 12px;
           cursor: pointer;
         }
 

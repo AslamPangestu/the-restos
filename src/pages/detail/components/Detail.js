@@ -56,6 +56,24 @@ class RestaurantDetail extends HTMLElement {
               flex-direction: row;
           }
         }
+        input[type=text], textarea {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+        button {
+          background-color: var(--text-dark);
+          border: none;
+          color: var(--secondary);
+          padding: 14px 24px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+        
       </style>
       <h1 class="page-title">${this._data.name}</h1>
       <div class="poster-container">
