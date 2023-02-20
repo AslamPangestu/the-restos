@@ -1,6 +1,3 @@
-import 'lazysizes'
-import 'lazysizes/plugins/parent-fit/ls.parent-fit'
-
 class Jumbotron extends HTMLElement {
   constructor () {
     super()
