@@ -1,3 +1,6 @@
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+
 class Jumbotron extends HTMLElement {
   constructor () {
     super()
@@ -18,13 +21,13 @@ class Jumbotron extends HTMLElement {
                 overflow: hidden;
             }
 
-            .container>img {
+            .container img {
                 width: 100%;
                 object-fit: cover;
                 filter: brightness(50%)
             }
 
-            .container>h1 {
+            .container h1 {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -34,7 +37,10 @@ class Jumbotron extends HTMLElement {
             }
         </style>
         <div class="container">
-          <img src="./images/hero-image_2.jpg" alt="jumbotron" loading="lazy" />
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/hero-image_2-small.jpg">
+            <img src="./images/hero-image_2-large.jpg" alt="jumbotron" loading="lazy" />
+          </picture>
           <h1>THE RESTOS</h1>
         </div>
       `
