@@ -26,7 +26,7 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    new Dotenv({ path: './.env.production' }),
+    new Dotenv({ path: './.env' }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: path.resolve(__dirname, 'src/service-worker.js'),
       swDest: './sw.bundle.js'
