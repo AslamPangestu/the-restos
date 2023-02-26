@@ -1,5 +1,7 @@
 import Loading from 'src/core/loading-construct'
-import FavoriteIdb from 'src/services/favourites-idb'
+import FavoriteIdb from 'src/services/favourite-idb'
+
+const onAfterRender = new Event('onAfterRender')
 
 const templateStyle = `
   <style>
@@ -25,11 +27,6 @@ const templateStyle = `
 `
 
 class LikeButton extends HTMLElement {
-  // constructor () {
-  //   super()
-  //   this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  // }
-
   connectedCallback () {
     this.data = null
     this.render()
@@ -52,6 +49,7 @@ class LikeButton extends HTMLElement {
     } else {
       this._renderLike()
     }
+    this.dispatchEvent(onAfterRender)
   }
 
   async _isDataExist (id) {
@@ -67,7 +65,7 @@ class LikeButton extends HTMLElement {
   _renderLiked () {
     this.innerHTML = `
       ${templateStyle}
-      <button aria-label="unlike this movie" id="likeButton" class="like">
+      <button aria-label="unlike this restaurant" id="likeButton" class="like">
         <i class="fa fa-heart" aria-hidden="true"></i>
       </button>
     `
@@ -85,7 +83,7 @@ class LikeButton extends HTMLElement {
   _renderLike () {
     this.innerHTML = `
       ${templateStyle}
-      <button aria-label="like this movie" id="likeButton" class="like">
+      <button aria-label="like this restaurant" id="likeButton" class="like">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
       </button>
     `

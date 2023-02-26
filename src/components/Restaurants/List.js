@@ -88,9 +88,6 @@ class RestaurantsContainer extends HTMLElement {
           border-radius: 8px;
         }
       </style>
-    `
-
-    this.shadowDOM.innerHTML += `
       <div class="error-container">
         <h2>${message}</h2>
       </div>

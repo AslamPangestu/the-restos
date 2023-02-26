@@ -24,7 +24,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   render () {
-    this.innerHTML = `
+    this.shadowDOM.innerHTML = `
       <style>
         .page-title{
           text-align: center;

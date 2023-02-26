@@ -9,6 +9,8 @@
     "build": "webpack --config webpack.prod.js && npm run build-image",
     "serve": "http-server dist",
     "build-serve": "npm run build && npm run serve",
+    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
+    "e2e": "codeceptjs run --steps",
     "analyze": "ANALYZE=true npm run build",
     "lint": "eslint ./src"
   },
