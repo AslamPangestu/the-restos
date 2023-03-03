@@ -1,15 +1,10 @@
 class FooterLayout extends HTMLElement {
-  constructor () {
-    super()
-    this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  }
-
   connectedCallback () {
     this.render()
   }
 
   render () {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
         footer {
           text-align: center;

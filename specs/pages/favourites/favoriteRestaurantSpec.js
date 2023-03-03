@@ -27,7 +27,7 @@ describe('Showing all favorite restaurant', () => {
     it('should show the information that no restaurant have been liked', (done) => {
       const restaurantsElement = document.querySelector('restaurants-container')
       restaurantsElement.addEventListener('restaurant:updated', () => {
-        expect(restaurantsElement.shadowDOM.querySelectorAll('.error-container').length).toEqual(1)
+        expect(restaurantsElement.querySelectorAll('.error-container').length).toEqual(1)
         done()
       })
 
@@ -45,7 +45,7 @@ describe('Showing all favorite restaurant', () => {
     it('should show the restaurant', (done) => {
       const restaurantsElement = document.querySelector('restaurants-container')
       restaurantsElement.addEventListener('restaurant:updated', () => {
-        expect(restaurantsElement.shadowDOM.querySelectorAll('restaurant-item').length).toEqual(2)
+        expect(restaurantsElement.querySelectorAll('restaurant-item').length).toEqual(2)
         done()
       })
       const services = spyOnAllFunctions(FavouriteIDB, false)

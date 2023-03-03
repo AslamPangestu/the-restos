@@ -1,15 +1,10 @@
 class LoadingLayout extends HTMLElement {
-  constructor () {
-    super()
-    this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  }
-
   connectedCallback () {
     this.render()
   }
 
   render () {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
         <style>
             .loading {
                 background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));

@@ -1,11 +1,6 @@
 import './Item'
 
 class RestaurantsContainer extends HTMLElement {
-  constructor () {
-    super()
-    this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  }
-
   connectedCallback () {
     this.pageTitle = this.getAttribute('page-title') || ''
     this.id = this.getAttribute('id') || null
@@ -29,12 +24,12 @@ class RestaurantsContainer extends HTMLElement {
   }
 
   render () {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
-        .page-title{
+        .restaurants-page-title{
           text-align: center;
         }
-        .container {
+        .restaurants-container {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
@@ -42,22 +37,22 @@ class RestaurantsContainer extends HTMLElement {
         }
 
         @media (min-width: 640px) {
-          .container {
+          .restaurants-container {
               grid-template-columns: repeat(2, 1fr);
           }
         }
 
         @media (min-width: 1024px) {
-            .container {
+            .restaurants-container {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
       </style>
-      <h1 class="page-title">${this.pageTitle}</h1>
-      <div class="container"></div>
+      <h1 class="restaurants-page-title">${this.pageTitle}</h1>
+      <div class="restaurants-container"></div>
     `
 
-    const containerElement = this.shadowDOM.querySelector('.container')
+    const containerElement = this.querySelector('.restaurants-container')
 
     if (!this._data || this._data.length === 0) {
       return
@@ -77,7 +72,7 @@ class RestaurantsContainer extends HTMLElement {
   }
 
   renderError (message) {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
         .error-container {
           display: flex;

@@ -66,18 +66,6 @@ const itActsAsFavoriteMovieModel = (service) => {
         error: null
       })
   })
-
-  // it('should be able to search for restaurants', async () => {
-  //   service.set({ id: 1, title: 'restaurant a' })
-  //   service.set({ id: 2, title: 'restaurant b' })
-  //   service.set({ id: 3, title: 'restaurant abc' })
-  //   service.set({ id: 4, title: 'ini mah restaurant abcd' })
-  //   expect(await service.searchMovies('restaurant a')).toEqual([
-  //     { id: 1, title: 'restaurant a' },
-  //     { id: 3, title: 'restaurant abc' },
-  //     { id: 4, title: 'ini mah restaurant abcd' }
-  //   ])
-  // })
 }
 
 export { itActsAsFavoriteMovieModel }

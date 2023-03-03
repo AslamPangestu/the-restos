@@ -1,11 +1,6 @@
 import { BASE_URL_IMAGE } from 'src/core/config'
 
 class RestaurantItem extends HTMLElement {
-  constructor () {
-    super()
-    this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  }
-
   connectedCallback () {
     this.id = this.getAttribute('id') || null
     this.image = this.getAttribute('image') || null
@@ -21,9 +16,9 @@ class RestaurantItem extends HTMLElement {
   }
 
   render () {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
-        .card {
+        .restaurant-card {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           border-radius: 8px;
           transition: 0.3s;
@@ -32,7 +27,7 @@ class RestaurantItem extends HTMLElement {
           margin: 0 auto;
         }
         
-        .card a {
+        .restaurant-card a {
           text-decoration: none;
           color: var(--text);
         }
@@ -53,21 +48,26 @@ class RestaurantItem extends HTMLElement {
           transform: scale(1.5);
         }
 
-        .card:hover {
+        .restaurant-card:hover {
           box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         }
 
-        .container {
+        .restaurant-content-container {
           padding: 2px 16px;
         }
+
+        .restaurant-content-container > h4 {
+          margin: 16px 0;
+        }
         
-        .description{
+        .restaurant-content-container > p{
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin-bottom: 16px;
         }
       </style>
-      <article class="card">
+      <article class="restaurant-card">
         <a href="/#/detail/${this._data[this.id]}">
             <div class="img-hover-zoom">
                 <picture>
@@ -76,7 +76,7 @@ class RestaurantItem extends HTMLElement {
                   <img src="${BASE_URL_IMAGE}/small/${this._data[this.image]}" alt=${this._data[this.title]} loading="lazy">
                 </picture>
             </div>
-            <div class="container">
+            <div class="restaurant-content-container">
               <h4>${this._data[this.title]}</h4>
               <p class="description">${this._data[this.description]}</p>
             </div>

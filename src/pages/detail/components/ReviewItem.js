@@ -1,9 +1,4 @@
 class ReviewItem extends HTMLElement {
-  constructor () {
-    super()
-    this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  }
-
   connectedCallback () {
     this.name = this.getAttribute('name') || null
     this.date = this.getAttribute('date') || ''
@@ -18,10 +13,10 @@ class ReviewItem extends HTMLElement {
   }
 
   render () {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
       
-      .container > div{
+      .review-container > div{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -32,13 +27,13 @@ class ReviewItem extends HTMLElement {
         margin-top: 6px;
       }
 
-      .description{
+      .review-container > p{
         margin: 0;
         padding-bottom: 16px;
         border-bottom: 1px solid var(--text);
       }
       </style>
-      <article class="container">
+      <article class="review-container">
         <div>
           <h4>${this.name}</h4>
           <span class="date">, ${this.date}</span>

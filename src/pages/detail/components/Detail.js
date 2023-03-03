@@ -1,11 +1,6 @@
 import { BASE_URL_IMAGE } from 'src/core/config'
 
 class RestaurantDetail extends HTMLElement {
-  constructor () {
-    super()
-    this.shadowDOM = this.attachShadow({ mode: 'closed' })
-  }
-
   connectedCallback () {
     this._data = null
     // this.render()
@@ -24,7 +19,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   render () {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
         .page-title{
           text-align: center;
@@ -130,7 +125,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   _generateMenuItem (query, data) {
-    const containerElement = this.shadowDOM.querySelector(query)
+    const containerElement = this.querySelector(query)
     if (!data || data.length === 0) {
       return
     }
@@ -142,7 +137,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   _generateReviewItem (data) {
-    const containerElement = this.shadowDOM.querySelector('.reviews-container')
+    const containerElement = this.querySelector('.reviews-container')
     if (!data || data.length === 0) {
       return
     }
@@ -156,7 +151,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   _handleSubmitReview (id) {
-    const formElement = this.shadowDOM.querySelector('form')
+    const formElement = this.querySelector('form')
     formElement.addEventListener('submit', async (event) => {
       event.preventDefault()
       const name = formElement.elements[0].value
@@ -167,7 +162,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   renderError (message) {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
         .error-container {
           display: flex;
@@ -178,9 +173,6 @@ class RestaurantDetail extends HTMLElement {
           border-radius: 8px;
         }
       </style>
-    `
-
-    this.shadowDOM.innerHTML += `
       <div class="error-container">
         <h2>${message}</h2>
       </div>
