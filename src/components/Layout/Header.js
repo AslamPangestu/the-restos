@@ -27,8 +27,8 @@ class HeaderLayout extends HTMLElement {
         header .app-bar__menu button {
           background-color: transparent;
           border: none;
-          font-size: 18px;
-          padding: 12px;
+          font-size: 24px;
+          padding: 8px 12px;
           cursor: pointer;
         }
 
